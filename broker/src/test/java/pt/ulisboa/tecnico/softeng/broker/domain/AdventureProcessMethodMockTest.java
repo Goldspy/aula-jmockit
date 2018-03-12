@@ -29,7 +29,49 @@ public class AdventureProcessMethodMockTest {
 	public void setUp() {
 		this.broker = new Broker("BR98", "Travel Light");
 	}
-
+	
+	@Test
+	public void BankProcessPayment(@Mocked BankInterface Bank) {
+		
+		new Expectationns(){{
+			
+			Bank.ProcessPayment();
+			result = throw new BankException();
+			
+		}};
+		new Verification() {
+			
+		}
+	}
+	
+	@Test
+	public void HotelReserveHotel(@Mocked HotelInterface Hotel) {
+		
+		new Expectationns(){{
+			
+			Hotel.ReserveHotel();
+			result = throw new HotelException();
+			
+		}};
+		new Verification() {
+			
+		}
+	}
+	
+	@Test
+	public void ActivityReserveActivity(@Mocked ActivityInterface Activity) {
+		
+		new Expectationns(){{
+			
+			Activity.ReserveActivity();
+			result = throw new ActivityException();
+			
+		}};
+		new Verification() {
+			
+		}
+	}
+	
 	@Test
 	public void processWithNoExceptions(@Mocked final BankInterface bankInterface,
 			@Mocked final HotelInterface hotelInterface, @Mocked final ActivityInterface activityInterface) {
